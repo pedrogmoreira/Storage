@@ -1,26 +1,21 @@
 <?php
 class Category {
-  // database connection and table name
-  private $conn;
-
-  private $table_name =   "category";
-
-  // object properties
-  public $id;
-
-  public $name;
-
-  // constructor with $db_conn as database connection
-  public function __construct($db_conn)
-  {
-
+ 
+    // database connection and table name
+    private $conn;
+    private $table_name = "category";
+ 
+    // object properties
+    public $id;
+    public $name;
+ 
+    // constructor with $db_conn as database connection
+    public function __construct($db_conn){
         $this->conn = $db_conn;
-  }
+    }
 
-  // read products
-  function view_categories()
-  {
-
+    // read products
+    function view_categories(){
      
         // select all query
         $query = "SELECT * FROM Categories
@@ -33,12 +28,10 @@ class Category {
         $stmt->execute();
      
         return $stmt;
-  }
-
-  // create category
-  function create()
-  {
-
+    }
+    
+    // create category
+    function create(){
         
         // query to insert record
         $query = "INSERT INTO
@@ -61,13 +54,9 @@ class Category {
         }else{
             return false;
         }
-  }
-
-  function getLastID()
-  {
-
+    }
+    
+    function getLastID() {
         return $this->conn->lastInsertId();
-  }
-
+    }
 }
-

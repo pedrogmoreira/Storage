@@ -1,9 +1,0 @@
-window_sizes 1280 672 320 955 520 104
-
-show_stereotypes
-selected 
-  package_ref 128251 // objects
-open
-  classview_ref 128251 // objects
-end
-end

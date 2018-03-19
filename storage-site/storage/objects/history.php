@@ -1,26 +1,21 @@
 <?php
 class History {
-  // database connection and table name
-  private $conn;
-
-  private $table_name =   "change_history";
-
-  // object properties
-  public $description;
-
-  public $quantity;
-
-  // constructor with $db_conn as database connection
-  public function __construct($db_conn)
-  {
-
+ 
+    // database connection and table name
+    private $conn;
+    private $table_name = "change_history";
+ 
+    // object properties
+    public $description;
+    public $quantity;
+ 
+    // constructor with $db_conn as database connection
+    public function __construct($db_conn){
         $this->conn = $db_conn;
-  }
-
-  // create category
-  function create($email, $barcode)
-  {
-
+    }
+    
+    // create category
+    function create($email, $barcode){
         if ($this->create_history()) {
             // query to insert record
             $query = "INSERT INTO
@@ -51,12 +46,10 @@ class History {
         } else {
             return false;
         }
-  }
-
-  // create category
-  function create_history()
-  {
-
+    }
+    
+    // create category
+    function create_history(){
         
         // query to insert record
         $query = "INSERT INTO
@@ -83,13 +76,9 @@ class History {
         }else{
             return false;
         }
-  }
-
-  function getLastID()
-  {
-
+    }
+    
+    function getLastID() {
         return $this->conn->lastInsertId();
-  }
-
+    }
 }
-

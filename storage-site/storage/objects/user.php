@@ -1,27 +1,20 @@
 <?php
-class User {
-  // database connection and table name
-  private $conn;
-
-  private $table_name =   "user";
-
-  // object properties
-  public $id;
-
-  public $cpf;
-
-  public $first_name;
-
-  public $last_name;
-
-  public $birth_date;
-
-  public $address;
-
-  // create user
-  function create($conn)
-  {
-
+class User{
+ 
+    // database connection and table name
+    private $conn;
+    private $table_name = "user";
+ 
+    // object properties
+    public $id;
+    public $cpf;
+    public $first_name;
+    public $last_name;
+    public $birth_date;
+    public $address;
+    
+    // create user
+    function create($conn){
         $address_id = $this->address->create($conn);
         
         // query to insert record
@@ -52,12 +45,10 @@ class User {
         }else{
             return false;
         }
-  }
-
-  // update user
-  function update($conn)
-  {
-
+    }
+    
+    // update user
+    function update($conn){
         if ($this->address->update($conn)) {
             // query to insert record
             $query = "UPDATE
@@ -90,10 +81,6 @@ class User {
         } else {
             return false;
         }
-  }
-
+    }
 }
-
-
-
 ?>
