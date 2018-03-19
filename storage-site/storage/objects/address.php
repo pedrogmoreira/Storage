@@ -1,24 +1,35 @@
 <?php
-class Address{
- 
-    // database connection and table name
-    private $conn;
-    private $table_name = "address";
- 
-    // object properties
-    public $id;
-	public $cep;
-	public $public_place;
-	public $complement;
-	public $neighborhood;
-	public $city;
-	public $state;
-	public $state_uf;
-	public $country;
-	public $number;
-	
-	// create profile
-    function create($conn){
+class Address {
+  // database connection and table name
+  private $conn;
+
+  private $table_name =   "address";
+
+  // object properties
+  public $id;
+
+  public $cep;
+
+  public $public_place;
+
+  public $complement;
+
+  public $neighborhood;
+
+  public $city;
+
+  public $state;
+
+  public $state_uf;
+
+  public $country;
+
+  public $number;
+
+  // create profile
+  function create($conn)
+  {
+
         // query to insert record
         $query = "INSERT INTO
                     " . $this->table_name . "
@@ -54,10 +65,12 @@ class Address{
         }else{
             return false;
         }
-    }
+  }
 
-    // update user
-    function update($conn){
+  // update user
+  function update($conn)
+  {
+
         // query to insert record
         $query = "UPDATE
                     " . $this->table_name . "
@@ -96,6 +109,10 @@ class Address{
         }else{
             return false;
         }
-    }
+  }
+
 }
+
+
+
 ?>

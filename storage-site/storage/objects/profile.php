@@ -2,29 +2,38 @@
 include_once '../objects/user.php';
 include_once '../objects/address.php';
 
-class Profile{
- 
-    // database connection and table name
-    private $conn;
-    private $table_name = "profile";
- 
-    // object properties
-    public $email;
-    public $password;
-    public $user;
-    public $create_time;
- 
-    // constructor with $db_conn as database connection
-    public function __construct($db_conn){
-        $this->conn = $db_conn;
-    }
-    
-    function getLastID() {
-        return $this->conn->lastInsertId();
-    }
+class Profile {
+  // database connection and table name
+  private $conn;
 
-    // used when filling up the update product form
-    function login(){
+  private $table_name =   "profile";
+
+  // object properties
+  public $email;
+
+  public $password;
+
+  public $user;
+
+  public $create_time;
+
+  // constructor with $db_conn as database connection
+  public function __construct($db_conn)
+  {
+
+        $this->conn = $db_conn;
+  }
+
+  function getLastID()
+  {
+
+        return $this->conn->lastInsertId();
+  }
+
+  // used when filling up the update product form
+  function login()
+  {
+
         // query to read single record
         $query = "SELECT * FROM " . $this->table_name . " P
                 INNER JOIN user U
@@ -68,10 +77,12 @@ class Profile{
             $this->user = $user;
             $this->create_time = $row['create_time'];
         }
-    }
-    
-    // create profile
-    function create(){
+  }
+
+  // create profile
+  function create()
+  {
+
         $user_id = $this->user->create($this->conn);
         
         // query to insert record
@@ -98,19 +109,23 @@ class Profile{
         }else{
             return false;
         }
-    }
-    
-    // update profile
-    function update(){
+  }
+
+  // update profile
+  function update()
+  {
+
         if($this->user->update($this->conn)){
             return true;
         }else{
             return false;
         }
-    }
+  }
 
-    // create profile
-    function change_password(){
+  // create profile
+  function change_password()
+  {
+
         // query to insert record
         $query = "UPDATE
                     " . $this->table_name . "
@@ -136,5 +151,7 @@ class Profile{
         }else{
             return false;
         }
-    }
+  }
+
 }
+

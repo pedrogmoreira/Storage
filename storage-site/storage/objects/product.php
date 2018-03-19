@@ -1,24 +1,32 @@
 <?php
 class Product {
- 
-    // database connection and table name
-    private $conn;
-    private $table_name = "product";
- 
-    // object properties
-    public $barcode;
-    public $name;
-    public $category;
-    public $quantity;
-    public $description;
- 
-    // constructor with $db_conn as database connection
-    public function __construct($db_conn){
-        $this->conn = $db_conn;
-    }
+  // database connection and table name
+  private $conn;
 
-    // read products
-    function view_products(){
+  private $table_name =   "product";
+
+  // object properties
+  public $barcode;
+
+  public $name;
+
+  public $category;
+
+  public $quantity;
+
+  public $description;
+
+  // constructor with $db_conn as database connection
+  public function __construct($db_conn)
+  {
+
+        $this->conn = $db_conn;
+  }
+
+  // read products
+  function view_products()
+  {
+
      
         // select all query
         $query = "SELECT * FROM Products";
@@ -30,9 +38,11 @@ class Product {
         $stmt->execute();
      
         return $stmt;
-    }
-    
-    function view_products_for_email($email) {
+  }
+
+  function view_products_for_email($email)
+  {
+
         // select all query
         $query = "SELECT
                     PD.barcode, PD.name, R.quantity, R.description, C.id_category, C.name as 'category_name'
@@ -54,10 +64,12 @@ class Product {
         $stmt->execute();
      
         return $stmt;
-    }
-    
-    // create product
-    function create(){
+  }
+
+  // create product
+  function create()
+  {
+
         // query to insert record
     	$query = "INSERT INTO
     	" . $this->table_name . "
@@ -82,10 +94,12 @@ class Product {
     	}else{
     		return false;
     	}
-    }
-    
-    // add product to user
-    function add_to_email($email){
+  }
+
+  // add product to user
+  function add_to_email($email)
+  {
+
         // query to insert record
     	$query = "INSERT INTO
     	            rel_product
@@ -113,10 +127,12 @@ class Product {
     	}else{
     		return false;
     	}
-    }
+  }
 
-    // update product quantity
-    function update_quantity($email){
+  // update product quantity
+  function update_quantity($email)
+  {
+
         // query to insert record
         $query = "UPDATE
                     rel_product
@@ -143,10 +159,12 @@ class Product {
         }else{
             return false;
         }
-    }
-    
-    // delete product for user
-    function delete($email){
+  }
+
+  // delete product for user
+  function delete($email)
+  {
+
         // query to insert record
         $query = "DELETE FROM
                     rel_product
@@ -169,10 +187,12 @@ class Product {
         }else{
             return false;
         }
-    }
+  }
 
-    // update product description
-    function update_description($email){
+  // update product description
+  function update_description($email)
+  {
+
         // query to insert record
         $query = "UPDATE
                     rel_product
@@ -199,9 +219,11 @@ class Product {
         }else{
             return false;
         }
-    }
+  }
 
-    function select_history($email, $barcode) {
+  function select_history($email, $barcode)
+  {
+
         // select all query
         $query = "SELECT
                     CH.description, CH.date, CH.quantity
@@ -221,5 +243,7 @@ class Product {
         $stmt->execute();
      
         return $stmt;
-    }
+  }
+
 }
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Documentation produced by the Html generator of Bouml (http://www.bouml.fr) -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Class Product</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class Product</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="ref4_128635"></a>
+<p>Declaration :</p><ul>
+<li>Php : class Product </li></ul><p>Artifact : <a href="index.html#ref8_128635"><b>product</b></a></p>
+<div class="sub">
+<a name="ref1_130811"></a>
+<table><tr><td><div class="element">Attribute <b>conn</b></div></td></tr></table>
+<p>database connection and table name<br /></p><p>Declaration :</p><ul><li>Uml : - conn : </li><li>Php : private $conn</li></ul><a name="ref1_130939"></a>
+<table><tr><td><div class="element">Attribute <b>table_name</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - table_name :  =   "product"</li><li>Php : private $table_name</li></ul><a name="ref1_131067"></a>
+<table><tr><td><div class="element">Attribute <b>barcode</b></div></td></tr></table>
+<p>object properties<br /></p><p>Declaration :</p><ul><li>Uml : + barcode : </li><li>Php : public $barcode</li></ul><a name="ref1_131195"></a>
+<table><tr><td><div class="element">Attribute <b>name</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : + name : </li><li>Php : public $name</li></ul><a name="ref1_131323"></a>
+<table><tr><td><div class="element">Attribute <b>category</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : + category : </li><li>Php : public $category</li></ul><a name="ref1_131451"></a>
+<table><tr><td><div class="element">Attribute <b>quantity</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : + quantity : </li><li>Php : public $quantity</li></ul><a name="ref1_131579"></a>
+<table><tr><td><div class="element">Attribute <b>description</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : + description : </li><li>Php : public $description</li></ul><a name="ref2_129531"></a>
+<table><tr><td><div class="element">Operation <b>__construct</b></div></td></tr></table><p>constructor with $db_conn as database connection<br /></p><p>Declaration :</p><ul><li>Uml : + __construct(in db_conn : ) : void</li><li>Php : public function __construct($db_conn): void </li></ul><a name="ref2_129659"></a>
+<table><tr><td><div class="element">Operation <b>view_products</b></div></td></tr></table><p>read products<br /></p><p>Declaration :</p><ul><li>Uml : ~ view_products() : void</li><li>Php :  function view_products(): void </li></ul><a name="ref2_129787"></a>
+<table><tr><td><div class="element">Operation <b>view_products_for_email</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : ~ view_products_for_email(in email : ) : void</li><li>Php :  function view_products_for_email($email): void </li></ul><a name="ref2_129915"></a>
+<table><tr><td><div class="element">Operation <b>create</b></div></td></tr></table><p>create product<br /></p><p>Declaration :</p><ul><li>Uml : ~ create() : void</li><li>Php :  function create(): void </li></ul><a name="ref2_130043"></a>
+<table><tr><td><div class="element">Operation <b>add_to_email</b></div></td></tr></table><p>add product to user<br /></p><p>Declaration :</p><ul><li>Uml : ~ add_to_email(in email : ) : void</li><li>Php :  function add_to_email($email): void </li></ul><a name="ref2_130171"></a>
+<table><tr><td><div class="element">Operation <b>update_quantity</b></div></td></tr></table><p>update product quantity<br /></p><p>Declaration :</p><ul><li>Uml : ~ update_quantity(in email : ) : void</li><li>Php :  function update_quantity($email): void </li></ul><a name="ref2_130299"></a>
+<table><tr><td><div class="element">Operation <b>delete</b></div></td></tr></table><p>delete product for user<br /></p><p>Declaration :</p><ul><li>Uml : ~ delete(in email : ) : void</li><li>Php :  function delete($email): void </li></ul><a name="ref2_130427"></a>
+<table><tr><td><div class="element">Operation <b>update_description</b></div></td></tr></table><p>update product description<br /></p><p>Declaration :</p><ul><li>Uml : ~ update_description(in email : ) : void</li><li>Php :  function update_description($email): void </li></ul><a name="ref2_130555"></a>
+<table><tr><td><div class="element">Operation <b>select_history</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : ~ select_history(in email : , in barcode : ) : void</li><li>Php :  function select_history($email, $barcode): void </li></ul></div>
+<p>All public operations : <a href="class128635.html#ref2_129531"><b>__construct</b></a> </p>
+</body>
+</html>
